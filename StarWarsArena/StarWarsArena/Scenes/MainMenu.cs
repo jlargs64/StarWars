@@ -14,10 +14,9 @@ namespace StarWars
             RichText mainT = new RichText("STAR WARS", 28);
             mainT.Color = Color.Yellow;
             RichText ptp = new RichText("PRESS SPACE TO PLAY",28);
-            RichText multi = new RichText("PRESS ENTER FOR MULTIPLAYER", 28);
             ptp.Color = Color.Yellow;
             AddGraphic(mainT, 250, 150);
-            AddGraphic(ptp, 150, 350);
+            AddGraphic(ptp, 185, 350);
             
             for(int i = 0;i < 1000;i++)
             {

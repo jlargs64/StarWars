@@ -14,17 +14,20 @@ namespace StarWars
         public bool isJumping = false;
         public int jumpCount = 0;
         public int health = 100;
+        public Obi obi;
+        bool hit = false;
+
         Spritemap<Animation> s = new Spritemap<Animation>("Assets/Anakin.png", 36,35);
         BoxCollider b = new BoxCollider(36, 35, Player.Anakin);
         public Anakin(int x, int y) : base(x, y)
         {
             
-            s.Add(Animation.WalkRight, "0", 1);
-            s.Add(Animation.WalkLeft, "1", 1);
-            s.Add(Animation.AttackR, "2", 1);
-            s.Add(Animation.AttackL, "3", 1);
-            s.Add(Animation.JumpR, "4", 1);
-            s.Add(Animation.JumpL, "5", 1);
+            s.Add(Animation.WalkRight, "0", 3);
+            s.Add(Animation.WalkLeft, "1", 3);
+            s.Add(Animation.AttackR, "2,1", 3);
+            s.Add(Animation.AttackL, "3,2", 3);
+            s.Add(Animation.JumpR, "4", 3);
+            s.Add(Animation.JumpL, "5", 3);
             health = 100;
             AddGraphic(s);
             s.CenterOrigin();
@@ -38,6 +41,8 @@ namespace StarWars
             X = Util.Clamp(X, 0, Game.Width-18);
             Y = Util.Clamp(Y, 0, Game.Height);
            
+
+
             if (Input.KeyDown(Key.A))
             {
                 s.Play(Animation.WalkLeft);
@@ -47,11 +52,23 @@ namespace StarWars
             if(Input.KeyDown(Key.F) && direction == Global.DIR_LEFT)
             {
                 s.Play(Animation.AttackL);
+               
             }
+            
             if (Input.KeyDown(Key.F) && direction == Global.DIR_RIGHT)
             {
                 s.Play(Animation.AttackR);
+                
             }
+            if(Input.KeyReleased(Key.F) && direction == Global.DIR_LEFT)
+            {
+                s.Play(Animation.WalkLeft);
+            }
+            if (Input.KeyReleased(Key.F) && direction == Global.DIR_RIGHT)
+            {
+                s.Play(Animation.WalkRight);
+            }
+
             if (Input.KeyDown(Key.D))
             {
                 s.Play(Animation.WalkRight);
@@ -124,9 +141,12 @@ namespace StarWars
             //collider
             if (b.Overlap(X,Y,Player.Obi) && Input.KeyDown(Key.F))
             {
+                obi.health -= 5;
+            }
+            if (health < 0)
+            {
                 Game.SwitchScene(new EndScene());
             }
-
         }
       
     }

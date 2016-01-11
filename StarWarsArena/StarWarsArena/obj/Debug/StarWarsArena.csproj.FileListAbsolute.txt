@@ -25,7 +25,6 @@ C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\C#\StarWarsArena\StarWarsArena\bin\Debu
 C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\bin\Debug\StarWarsArena.exe.config
 C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\obj\Debug\StarWarsArena.exe
 C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\obj\Debug\StarWarsArena.pdb
-C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\bin\Debug\Assets\Anakin Big.png
 C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\bin\Debug\Assets\Anakin.png
 C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\bin\Debug\Assets\Contact.png
 C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\bin\Debug\Assets\Obi Wan.png

@@ -11,7 +11,7 @@ namespace StarWars
     {
         static void Main(string[] args)
         {
-            var g = new Game("STAR WARS",640,500);
+            var g = new Game("STAR WARS",640,500,80);
             g.MouseVisible = true;
             g.WindowBorder = true;
             g.WindowResize = false;
