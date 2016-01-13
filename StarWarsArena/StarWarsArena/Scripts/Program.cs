@@ -5,17 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StarWars
+namespace StarWarsArena
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var g = new Game("STAR WARS",640,500,80);
+            var g = new Game("STAR WARS", 640, 500, 80);
             g.MouseVisible = true;
             g.WindowBorder = true;
             g.WindowResize = false;
-           // g.SetWindowAutoFullscreen();
+            // g.SetWindowAutoFullscreen();
             g.Start(new MainMenu());
         }
 

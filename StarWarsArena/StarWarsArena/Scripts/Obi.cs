@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StarWars
+namespace StarWarsArena
 {
     class Obi : Entity
     {
@@ -17,7 +17,7 @@ namespace StarWars
         public Anakin anakin;
         public int health;
         bool hit = false;
-
+        //Pete
         Spritemap<Animation> s = new Spritemap<Animation>("Assets/Obi Wan.png", 36, 35);
         BoxCollider b = new BoxCollider(36, 35, Player.Obi);
         public Obi(int x, int y) : base(x, y)
@@ -64,15 +64,15 @@ namespace StarWars
             {
                 s.Stop();
             }
-            if (Input.KeyReleased(Key.F) && direction == Global.DIR_LEFT)
+            if (Input.KeyReleased(Key.M) && direction == Global.DIR_LEFT)
             {
                 s.Play(Animation.WalkLeft);
             }
-            if (Input.KeyReleased(Key.F) && direction == Global.DIR_RIGHT)
+            if (Input.KeyReleased(Key.M) && direction == Global.DIR_RIGHT)
             {
                 s.Play(Animation.WalkRight);
             }
-
+            //Nothing else Pete
             //enable jump
             if (Input.KeyDown(Key.Up) && isJumping == false)
             {
@@ -133,10 +133,7 @@ namespace StarWars
             {
                 anakin.health -= 5;
             }
-            if (health < 0)
-            {
-                Game.SwitchScene(new EndScene());
-            }
+           
             
         }
     }

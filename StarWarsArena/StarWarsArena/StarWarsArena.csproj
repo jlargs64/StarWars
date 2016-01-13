@@ -50,6 +50,7 @@
     <Compile Include="Scenes\EndScene.cs" />
     <Compile Include="Scenes\gameScene.cs" />
     <Compile Include="Scenes\MainMenu.cs" />
+    <Compile Include="Scenes\aEndScene.cs" />
     <Compile Include="Scripts\Anakin.cs" />
     <Compile Include="Scripts\Global.cs" />
     <Compile Include="Scripts\Obi.cs" />
@@ -67,6 +68,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Contact.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\John Williams Star Wars - Episode III - Anakin vs. Obi-Wan.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Obi Wan.png">

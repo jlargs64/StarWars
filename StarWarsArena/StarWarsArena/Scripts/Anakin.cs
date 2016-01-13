@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StarWars
+namespace StarWarsArena
 {
     class Anakin : Entity
     {
@@ -52,23 +52,25 @@ namespace StarWars
             if(Input.KeyDown(Key.F) && direction == Global.DIR_LEFT)
             {
                 s.Play(Animation.AttackL);
-               
+                hit = true;
             }
             
             if (Input.KeyDown(Key.F) && direction == Global.DIR_RIGHT)
             {
                 s.Play(Animation.AttackR);
-                
+                hit = true;
             }
             if(Input.KeyReleased(Key.F) && direction == Global.DIR_LEFT)
             {
                 s.Play(Animation.WalkLeft);
+                hit = false;
             }
             if (Input.KeyReleased(Key.F) && direction == Global.DIR_RIGHT)
             {
                 s.Play(Animation.WalkRight);
+                hit = false;
             }
-
+           
             if (Input.KeyDown(Key.D))
             {
                 s.Play(Animation.WalkRight);
@@ -139,14 +141,11 @@ namespace StarWars
                     }
             }
             //collider
-            if (b.Overlap(X,Y,Player.Obi) && Input.KeyDown(Key.F))
-            {
-                obi.health -= 5;
-            }
-            if (health < 0)
-            {
-                Game.SwitchScene(new EndScene());
-            }
+                if (b.Overlap(X, Y, Player.Obi) && Input.KeyDown(Key.F))
+                {
+                    obi.health -= 5;
+                }
+           
         }
       
     }

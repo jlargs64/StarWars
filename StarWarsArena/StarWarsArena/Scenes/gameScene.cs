@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StarWars
+namespace StarWarsArena
 {
     class gameScene : Scene
     {
@@ -13,6 +13,7 @@ namespace StarWars
         private Obi o;
         RichText aH = new RichText(16);
         RichText oH = new RichText(16);
+        Music mainTheme = new Music("Assets/John Williams Star Wars - Episode III - Anakin vs. Obi-Wan.wav");
         public gameScene() : base()
         {
             Image level = new Image("Assets/Project Background.png");
@@ -24,7 +25,7 @@ namespace StarWars
             o.anakin = a;
             Add(a);
             Add(o);
-
+            mainTheme.Play();
         }
         public override void Update()
         {
@@ -34,6 +35,15 @@ namespace StarWars
             AddGraphic(aH, 10, 10);
             oH.String = "Obi Wan: " + o.health;
             AddGraphic(oH, 525, 10);
+
+            if(a.health < 0)
+            {
+                Game.SwitchScene(new EndScene());
+            }
+            if(o.health < 0)
+            {
+                Game.SwitchScene(new aEndScene());
+            }
         }
     }
 }
