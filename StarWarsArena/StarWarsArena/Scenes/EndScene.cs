@@ -9,6 +9,7 @@ namespace StarWarsArena
 {
     class EndScene : Scene
     {
+        Music oWin = new Music("Assets/Vader Win.wav");
         public EndScene() : base()
         {
             
@@ -19,12 +20,15 @@ namespace StarWarsArena
                 Image star = Image.CreateCircle(1, Color.White);
                 AddGraphic(star, x, y);
             }
-            RichText t = new RichText("I HAVE THE HIGH GROUND ANAKIN", 28);
-            RichText ptp = new RichText("PRESS SPACE TO PLAY", 28);
+          
+            RichText t = new RichText("obi wan wins!", Global.sText, 28, 28);
+            RichText ptp = new RichText("press space to play", Global.sText, 28, 28);
             ptp.Color = Color.Yellow;
             t.Color = Color.Yellow;
-            AddGraphic(ptp,185,350);
-            AddGraphic(t, 135, 200);
+            oWin.Play();
+            Sound.GlobalVolume = 100;
+            AddGraphic(ptp,155,350);
+            AddGraphic(t, 200, 200);
            
         }
         public override void Update()
@@ -32,6 +36,7 @@ namespace StarWarsArena
             base.Update();
             if (Input.KeyDown(Key.Space))
             {
+                oWin.Stop();
                 Game.SwitchScene(new StarWarsArena.gameScene());
             }
         }

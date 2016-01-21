@@ -15,10 +15,10 @@ namespace StarWarsArena
         public int jumpCount = 0;
         public int health = 100;
         public Obi obi;
-        bool hit = false;
+        
 
-        Spritemap<Animation> s = new Spritemap<Animation>("Assets/Anakin.png", 36,35);
-        BoxCollider b = new BoxCollider(36, 35, Player.Anakin);
+        Spritemap<Animation> s = new Spritemap<Animation>("Assets/Anakin Resize.png", 72,70);
+        BoxCollider b = new BoxCollider(72,70, Player.Anakin);
         public Anakin(int x, int y) : base(x, y)
         {
             
@@ -32,6 +32,7 @@ namespace StarWarsArena
             AddGraphic(s);
             s.CenterOrigin();
             AddCollider(b);
+            b.CenterOrigin();
             
         }
         public override void Update()
@@ -49,26 +50,26 @@ namespace StarWarsArena
                 X -= speed;
                 direction = Global.DIR_LEFT;
             }
-            if(Input.KeyDown(Key.F) && direction == Global.DIR_LEFT)
+            if(Input.KeyDown(Key.C) && direction == Global.DIR_LEFT)
             {
                 s.Play(Animation.AttackL);
-                hit = true;
+                
             }
             
-            if (Input.KeyDown(Key.F) && direction == Global.DIR_RIGHT)
+            if (Input.KeyDown(Key.C) && direction == Global.DIR_RIGHT)
             {
                 s.Play(Animation.AttackR);
-                hit = true;
+                
             }
-            if(Input.KeyReleased(Key.F) && direction == Global.DIR_LEFT)
+            if(Input.KeyDown(Key.A) && direction == Global.DIR_LEFT)
             {
                 s.Play(Animation.WalkLeft);
-                hit = false;
+                
             }
-            if (Input.KeyReleased(Key.F) && direction == Global.DIR_RIGHT)
+            if (Input.KeyDown(Key.D) && direction == Global.DIR_RIGHT)
             {
                 s.Play(Animation.WalkRight);
-                hit = false;
+               
             }
            
             if (Input.KeyDown(Key.D))
@@ -106,6 +107,7 @@ namespace StarWarsArena
                 {
                     isJumping = false;
                     jumpCount = 0;
+                    Y = 420;
                 }
               
             }
@@ -126,6 +128,7 @@ namespace StarWarsArena
                 {
                     isJumping = false;
                     jumpCount = 0;
+                    Y = 420;
                 }
               
             }
@@ -141,12 +144,13 @@ namespace StarWarsArena
                     }
             }
             //collider
-                if (b.Overlap(X, Y, Player.Obi) && Input.KeyDown(Key.F))
+            if (b.Overlap(X, Y, Player.Obi) && Input.KeyDown(Key.C)) 
                 {
-                    obi.health -= 5;
+                    obi.health -= 1;
                 }
-           
+          
+
         }
-      
+
     }
 }

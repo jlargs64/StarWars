@@ -11,9 +11,9 @@ namespace StarWarsArena
     {
         public MainMenu() : base()
         {
-            RichText mainT = new RichText("STAR WARS", 28);
+            RichText mainT = new RichText("STAR WARS",Global.sText,28);
             mainT.Color = Color.Yellow;
-            RichText ptp = new RichText("PRESS SPACE TO PLAY",28);
+            RichText ptp = new RichText("PRESS SPACE TO PLAY",Global.sText,28,28);
             ptp.Color = Color.Yellow;
             AddGraphic(mainT, 250, 150);
             AddGraphic(ptp, 185, 350);

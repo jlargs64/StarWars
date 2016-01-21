@@ -22,3 +22,10 @@ C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\bi
 C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\obj\Release\StarWarsArena.csprojResolveAssemblyReference.cache
 C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\obj\Release\StarWarsArena.exe
 C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\obj\Release\StarWarsArena.pdb
+C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\bin\Release\Assets\Anakin Resize.png
+C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\bin\Release\Assets\Anakin Wins.wav
+C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\bin\Release\Assets\John Williams Star Wars - Episode III - Anakin vs. Obi-Wan.wav
+C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\bin\Release\Assets\Obi Win.wav
+C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\bin\Release\Assets\ObiWan Resize.png
+C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\bin\Release\Assets\Vader Win.wav
+C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\bin\Release\Assets\Starjedi.ttf

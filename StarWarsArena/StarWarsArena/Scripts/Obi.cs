@@ -11,15 +11,14 @@ namespace StarWarsArena
     {
        
         int speed = 5;
-        public int direction = 0;
+        public byte direction = 0;
         public bool isJumping = false;
         public int jumpCount = 0;
         public Anakin anakin;
         public int health;
-        bool hit = false;
         //Pete
-        Spritemap<Animation> s = new Spritemap<Animation>("Assets/Obi Wan.png", 36, 35);
-        BoxCollider b = new BoxCollider(36, 35, Player.Obi);
+        Spritemap<Animation> s = new Spritemap<Animation>("Assets/ObiWan Resize.png", 72, 68);
+        BoxCollider b = new BoxCollider(72,68, Player.Obi);
         public Obi(int x, int y) : base(x, y)
         {
             s.Add(Animation.WalkRight, "0", 3);
@@ -31,7 +30,10 @@ namespace StarWarsArena
             health = 100;
             AddGraphic(s);
             s.CenterOrigin();
+            s.Play(Animation.WalkLeft);
             AddCollider(b);
+            b.CenterOrigin();
+
         }
         public override void Update()
         {
@@ -64,11 +66,11 @@ namespace StarWarsArena
             {
                 s.Stop();
             }
-            if (Input.KeyReleased(Key.M) && direction == Global.DIR_LEFT)
+            if (Input.KeyDown(Key.Left) && direction == Global.DIR_LEFT)
             {
                 s.Play(Animation.WalkLeft);
             }
-            if (Input.KeyReleased(Key.M) && direction == Global.DIR_RIGHT)
+            if (Input.KeyDown(Key.Right) && direction == Global.DIR_RIGHT)
             {
                 s.Play(Animation.WalkRight);
             }
@@ -80,6 +82,7 @@ namespace StarWarsArena
             }
 
             //the jump math
+            
             if (isJumping == true && direction == Global.DIR_RIGHT)
             {
                 jumpCount++;
@@ -96,6 +99,7 @@ namespace StarWarsArena
                 {
                     isJumping = false;
                     jumpCount = 0;
+                    Y = 420;
                 }
 
             }
@@ -115,6 +119,7 @@ namespace StarWarsArena
                 {
                     isJumping = false;
                     jumpCount = 0;
+                    Y = 420;
                 }
 
             }
@@ -129,12 +134,15 @@ namespace StarWarsArena
                         break;
                     }
             }
-            if (b.Overlap(X, Y, Player.Anakin) && Input.KeyDown(Key.M))
+
+            if (b.Overlap(X, Y, Player.Anakin) && Input.KeyDown(Key.M)) 
             {
-                anakin.health -= 5;
+                anakin.health -= 1;
             }
-           
-            
+
+
+
+
         }
     }
 }

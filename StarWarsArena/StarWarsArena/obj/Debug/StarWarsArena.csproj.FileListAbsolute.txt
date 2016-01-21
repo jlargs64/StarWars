@@ -46,3 +46,9 @@ C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\bi
 C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\bin\Debug\sfmlnet-audio-2.xml
 C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\obj\Debug\StarWarsArena.csprojResolveAssemblyReference.cache
 C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\bin\Debug\Assets\John Williams Star Wars - Episode III - Anakin vs. Obi-Wan.wav
+C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\bin\Debug\Assets\Anakin Resize.png
+C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\bin\Debug\Assets\ObiWan Resize.png
+C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\bin\Debug\Assets\Starjedi.ttf
+C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\bin\Debug\Assets\Obi Win.wav
+C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\bin\Debug\Assets\Vader Win.wav
+C:\Users\sjv2017483\Dropbox\JUNIOR\CS101\StarWars\StarWarsArena\StarWarsArena\bin\Debug\Assets\Anakin Wins.wav
