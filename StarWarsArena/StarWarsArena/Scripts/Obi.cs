@@ -11,9 +11,10 @@ namespace StarWarsArena
     {
        
         int speed = 5;
+        public int damage = 3;
         public byte direction = 0;
         public bool isJumping = false;
-        public int jumpCount = 0;
+        public byte jumpCount = 0;
         public Anakin anakin;
         public int health;
         //Pete
@@ -48,11 +49,11 @@ namespace StarWarsArena
                 X -= speed;
                 direction = Global.DIR_LEFT;
             }
-            if (Input.KeyDown(Key.M) && direction == Global.DIR_LEFT)
+            if (Input.KeyDown(Key.N) && direction == Global.DIR_LEFT)
             {
                 s.Play(Animation.AttackL);
             }
-            if (Input.KeyDown(Key.M) && direction == Global.DIR_RIGHT)
+            if (Input.KeyDown(Key.N) && direction == Global.DIR_RIGHT)
             {
                 s.Play(Animation.AttackR);
             }
@@ -134,12 +135,27 @@ namespace StarWarsArena
                         break;
                     }
             }
-
-            if (b.Overlap(X, Y, Player.Anakin) && Input.KeyDown(Key.M)) 
+            //attack
+            if (b.Overlap(X, Y, Player.Anakin) && Input.KeyPressed(Key.N)) 
             {
-                anakin.health -= 1;
+                anakin.health -= damage;
+            }
+            //block
+            if (Input.KeyDown(Key.M) && direction == Global.DIR_LEFT && b.Overlap(X,Y,Player.Anakin))
+            {
+                s.Play(Animation.JumpL);
+                anakin.damage = 0;
             }
 
+            if (Input.KeyDown(Key.M) && direction == Global.DIR_RIGHT && b.Overlap(X, Y, Player.Anakin))
+            {
+                s.Play(Animation.JumpR);
+                anakin.damage = 0;
+            }
+            if (Input.KeyUp(Key.M))
+            {
+                anakin.damage = 3;
+            }
 
 
 

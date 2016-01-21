@@ -10,15 +10,16 @@ namespace StarWarsArena
     class Anakin : Entity
     {
         int speed = 5;
+        public int damage = 3;
         public int direction = 0;
         public bool isJumping = false;
-        public int jumpCount = 0;
+        public byte jumpCount = 0;
         public int health = 100;
         public Obi obi;
         
 
-        Spritemap<Animation> s = new Spritemap<Animation>("Assets/Anakin Resize.png", 72,70);
-        BoxCollider b = new BoxCollider(72,70, Player.Anakin);
+        Spritemap<Animation> s = new Spritemap<Animation>("Assets/Anakin Resize.png", 72,65);
+        BoxCollider b = new BoxCollider(72,65, Player.Anakin);
         public Anakin(int x, int y) : base(x, y)
         {
             
@@ -144,11 +145,26 @@ namespace StarWarsArena
                     }
             }
             //collider
-            if (b.Overlap(X, Y, Player.Obi) && Input.KeyDown(Key.C)) 
-                {
-                    obi.health -= 1;
-                }
-          
+            if (b.Overlap(X, Y, Player.Obi) && Input.KeyPressed(Key.C)) 
+            {
+                    obi.health -= damage;
+            }
+            //block
+            if (Input.KeyDown(Key.V) && direction == Global.DIR_LEFT && b.Overlap(X, Y, Player.Anakin))
+            {
+                s.Play(Animation.JumpL);
+                obi.damage = 0;
+            }
+
+            if (Input.KeyDown(Key.V) && direction == Global.DIR_RIGHT && b.Overlap(X, Y, Player.Anakin))
+            {
+                s.Play(Animation.JumpR);
+                obi.damage = 0;
+            }
+            if (Input.KeyUp(Key.V))
+            {
+                obi.damage = 3;
+            }
 
         }
 
